@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         
         // queueWithDelay()
         
-        // fetchImage()
+        fetchImage()
         
         // useWorkItem()
     }
@@ -64,10 +64,10 @@ class ViewController: UIViewController {
     
     
     func queuesWithQoS() {
-        let queue1 = DispatchQueue(label: "com.appcoda.queue1", qos: DispatchQoS.userInitiated)
+        let queue1 = DispatchQueue(label: "com.appcoda.queue1", qos: .userInitiated)
         // let queue1 = DispatchQueue(label: "com.appcoda.queue1", qos: DispatchQoS.background)
         // let queue2 = DispatchQueue(label: "com.appcoda.queue2", qos: DispatchQoS.userInitiated)
-        let queue2 = DispatchQueue(label: "com.appcoda.queue2", qos: DispatchQoS.utility)
+        let queue2 = DispatchQueue(label: "com.appcoda.queue2", qos: .utility)
         
         queue1.async {
             for i in 0..<10 {

@@ -64,7 +64,7 @@ class ViewController: UIViewController {
                 self.imageView2.image = img2
             })
         })
-        operation2.addDependency(operation1)
+        //operation2.addDependency(operation1)
         operation2.completionBlock = {
             print("Operation 2 completed, cancelled:\(operation2.isCancelled)")
         }
@@ -77,7 +77,7 @@ class ViewController: UIViewController {
                 self.imageView3.image = img3
             })
         })
-        operation3.addDependency(operation2)
+        //operation3.addDependency(operation2)
 
         operation3.completionBlock = {
             print("Operation 3 completed, cancelled:\(operation3.isCancelled)")
@@ -97,14 +97,12 @@ class ViewController: UIViewController {
         queue.addOperation(operation4)
         
     }
-    @IBAction func sliderValueChanged(sender: UISlider) {
-        
+    
+    @IBAction func valueChanged(_ sender: UISlider) {
         self.sliderValueLabel.text = "\(sender.value * 100.0)"
     }
-
  
     @IBAction func didClickOnCancel(_ sender: AnyObject) {
-        
         self.queue.cancelAllOperations()
     }
 }
